@@ -115,12 +115,11 @@ class Unet(Module):
 
 
 class BB_Unet(Module):
-    """
-    The proposed BB-UNet takes as input :
-    n_organs: number of classes to be segmented, default =4 beloging to the 4 Segthor organs.
-    BB_boxes: number of boxes to use: 1 refers to having all bounding boxes of the four organs meshed together; 
-    4 refers to 4 seperate channels representing bounding maps of each organ fed seperately. 
-    
+    """A reference U-Net model.
+    .. seealso::
+        Ronneberger, O., et al (2015). U-Net: Convolutional
+        Networks for Biomedical Image Segmentation
+        ArXiv link: https://arxiv.org/abs/1505.04597
     """
     def __init__(self, drop_rate=0.6, bn_momentum=0.1, no_grad=False, n_organs = 4, BB_boxes = 1):
         super(BB_Unet, self).__init__()
